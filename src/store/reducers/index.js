@@ -1,4 +1,4 @@
-import { FETCH_CARDS_START } from "../actions"
+import { FETCH_CARDS_START, FETCH_CARDS_SUCCESS } from "../actions"
 
 const initialState = {
     isLoading: false,
@@ -16,6 +16,12 @@ export const cardsReducer = (state = initialState, action) => {
                 isLoading: true,
                 // deck_id: res.deck_id,
                 error: ""
+            }
+        case FETCH_CARDS_SUCCESS:
+            return {
+                ...state,
+                isLoading: false,
+                cardsData: action.payload
             }
         default:
             return state;

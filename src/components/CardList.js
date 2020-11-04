@@ -17,6 +17,7 @@ const CardsList = (props) => {
             {props.error ? <p style={{ color: "red" }}>{props.error}</p> : null}
             {props.cards.map(card =>(
                 <div>
+                <img src={card.image} />
                 <h4>{card.code}</h4>
                 </div>
             ))}
